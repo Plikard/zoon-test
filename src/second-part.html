@@ -1,0 +1,116 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zoon Test | Part 2</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="wrapper__inner">
+        <div class="dashboard">
+            <div class="dashboard__widget widget">
+                <div class="widget__total js-total-review"></div>
+                <div class="widget__title js-title-review">отзывов</div>
+                <div class="widget__icon">
+                    <svg class="widget__icon-svg">
+                        <use xlink:href="spritemap.svg#icon-reviews"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="dashboard__widget widget">
+                <div class="widget__total js-total-reply"></div>
+                <div class="widget__title js-title-reply">неотвеченный отзыв</div>
+                <div class="widget__icon">
+                    <svg class="widget__icon-svg">
+                        <use xlink:href="spritemap.svg#icon-review"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="dashboard__widget dashboard__widget_update widget">
+                <div class="widget__total js-total-update"></div>
+                <div class="widget__title js-title-update">обновлений</div>
+                <div class="widget__icon">
+                    <svg class="widget__icon-svg">
+                        <use xlink:href="spritemap.svg#icon-update"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="dashboard__widget widget">
+                <div class="widget__total js-total-rating">4.5</div>
+                <div class="widget__title js-title-rating">средний рейтинг</div>
+                <div class="widget__icon">
+                    <svg class="widget__icon-svg">
+                        <use xlink:href="spritemap.svg#icon-star"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="panels js-panels">
+            <div class="panels__item panel js-panel-item hidden" id="panel-element">
+                <div class="panel__menu js-panel-menu">
+                    <svg class="panel__menu-icon">
+                        <use xlink:href="spritemap.svg#icon-dots"/>
+                    </svg>
+                    <div class="panel__dropdown">
+                        <a class="panel__dropdown-item" href="#">
+                            Выключить
+                        </a>
+                    </div>
+                </div>
+                <div class="panel__row panel__row_header">
+                    <div class="panel__title js-panel-title"></div>
+                </div>
+                <div class="panel__row">
+                    <div class="panel__status panel__status_active">
+                        <svg class="panel__status-icon">
+                            <use xlink:href="spritemap.svg#icon-check"/>
+                        </svg>
+                        Синхронизировано
+                    </div>
+                    <div class="panel__status">
+                        <svg class="panel__status-icon">
+                            <use xlink:href="spritemap.svg#icon-check"/>
+                        </svg>
+                        Инфа
+                    </div>
+                    <div class="panel__status">
+                        <svg class="panel__status-icon">
+                            <use xlink:href="spritemap.svg#icon-check"/>
+                        </svg>
+                        Прайс
+                    </div>
+                    <div class="panel__status">
+                        <svg class="panel__status-icon">
+                            <use xlink:href="spritemap.svg#icon-check"/>
+                        </svg>
+                        Фото
+                    </div>
+                    <div class="panel__status">
+                        <svg class="panel__status-icon">
+                            <use xlink:href="spritemap.svg#icon-check"/>
+                        </svg>
+                        Акции
+                    </div>
+                </div>
+                <div class="panel__row">
+                    <div class="panel__rating">
+                        <svg class="panel__rating-star">
+                            <use xlink:href="spritemap.svg#icon-star"/>
+                        </svg>
+                        <span class="js-panel-rating">0</span> из 5
+                    </div>
+                    <div class="panel__reviews">
+                        <span class="js-panel-review"></span>,
+                        <span class="js-panel-reply"></span>
+                    </div>
+                    <div class="panel__updates js-panel-update">2 обновления</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

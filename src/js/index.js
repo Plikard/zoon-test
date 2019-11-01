@@ -51,39 +51,42 @@ let panelsWrapper = document.querySelector('.js-panels'),
   ],
   panels = [];
 
-let Board = new Dashboard(jsonData);
+if (panelsWrapper) {
 
-for (let data of jsonData) {
-  let panel = new Panels(data);
-  panels[data.id] = panel;
-  panelsWrapper.append(panel.element);
-}
+  let Board = new Dashboard(jsonData);
 
-function r(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
+  for (let data of jsonData) {
+    let panel = new Panels(data);
+    panels[data.id] = panel;
+    panelsWrapper.append(panel.element);
+  }
 
-function getRandomObject() {
-  let obj = jsonData[Math.floor(Math.random() * jsonData.length)];
-  Object.assign(obj, {
-    state: states[Math.floor(Math.random() * states.length)],
-    rating: r(1, 5),
-    review: r(0, 200),
-    reply: r(0, 20),
-    update: r(0, 5)
-  });
+  function r(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
 
-  return obj;
-}
+  function getRandomObject() {
+    let obj = jsonData[Math.floor(Math.random() * jsonData.length)];
+    Object.assign(obj, {
+      state: states[Math.floor(Math.random() * states.length)],
+      rating: r(1, 5),
+      review: r(0, 200),
+      reply: r(0, 20),
+      update: r(0, 5)
+    });
 
-setInterval(function () {
-  let obj = getRandomObject();
-  jsonData = jsonData.map(item => item.id === obj.id ? obj : item);
-  update(obj);
-}, r(10, 25) * 1000);
+    return obj;
+  }
+
+  setInterval(function () {
+    let obj = getRandomObject();
+    jsonData = jsonData.map(item => item.id === obj.id ? obj : item);
+    update(obj);
+  }, r(10, 25) * 1000);
 
 
-function update(obj) {
-  Board.updateWidgets(jsonData)
-  panels[obj.id].setData(obj)
+  function update(obj) {
+    Board.updateWidgets(jsonData)
+    panels[obj.id].setData(obj)
+  }
 }
